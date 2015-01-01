@@ -27,7 +27,7 @@ Use **hooker.trigger** like *publish, pub, emit,* etc.
 
 ```js
 hooker.register('hooked', function (data) {
-  console.log ('I am hooked to hooker', data);
+	console.log ('I am hooked to hooker', data);
 });
 
 hooker.register('hooked', function (data) {
@@ -48,7 +48,7 @@ Each hook has some data passed to it. It can change this data for the next hook.
 
 ```js
 hooker.register('hooker', function (data, previousData){
-  console.log ('hooker1', data)
+	console.log ('hooker1', data)
     console.log ('prevData', previousData);
     data.message = 'First!';
     return data;
@@ -58,7 +58,7 @@ hooker.register('hooker', function (data, previousData){
 'prevData' [{message: 'value'}]
 
 hooker.register('hooker', function (data, previousData){
-  console.log ('hooker2', data);
+	console.log ('hooker2', data);
     console.log ('prevData', previousData);
     data.message = 'Second!';
     return data;
@@ -69,7 +69,7 @@ hooker.register('hooker', function (data, previousData){
 
 
 hooker.register('hooker', function (data, previousData){
-  console.log ('hooker3', data)
+	console.log ('hooker3', data)
     console.log ('prevData', previousData);
 })
 //Outputs
@@ -78,7 +78,7 @@ hooker.register('hooker', function (data, previousData){
 
 
 hooker.trigger('hooker',{
-  'message': 'value'
+	'message': 'value'
 })
 ```
 ##API
@@ -99,16 +99,16 @@ We hope to include a compiler which will inline most of the static hooking calls
 We will include more tests using [The Intern](http://theintern.io) testing framework. For now you can just use `test.js` 
  
 ##Roadmap
-0.1 Initial documentation and setup.
-0.2 Basic synchronous hooks and simple API
-0.3 Asynchronous Research and integration.
-0.4 Integrate theintern and wide variety of testcases.
-0.5 Add performance tests and publish results.
-0.6 Better documentation and Wiki.
 
-1.0 Launch of first version for production.
-1.1 API to maintain order of hooks.
- 
+ - 0.1 Initial documentation and setup.
+ - 0.2 Basic synchronous hooks and simple API
+ - 0.3 Asynchronous Research and integration.
+ - 0.4 Integrate theintern and wide variety of testcases.
+ - 0.5 Add performance tests and publish results.
+ - 0.6 Better documentation and Wiki.
+ - 1.0 Launch of first version for production.
+ - 1.1 API to maintain order of hooks.
+
 ##Contributing
 Coming Soon. Till then, why don't you [join the discussion](https://github.com/rcorp/hooker/issues)?
 
