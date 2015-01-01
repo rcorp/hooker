@@ -1,0 +1,38 @@
+{
+  "name": "hookerjs",
+  "version": "0.1.1",
+  "description": "Hook Oriented Programming in JavaScript. Node.JS and the Browser",
+  "author": "Ramanan Corporation (RCorp) <contactus@rcorp.co.in>",
+  "contributors": [{
+  "name": "Gaurav Ramanan",
+  "email": "contactus@rcorp.co.in"
+}],
+  "scripts": {
+    "test": "vows --spec --isolate",
+    "start": "node hooker.js"
+  },
+  "main": "hooker.js",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/rcorp/hooker/"
+},
+  "bugs": {
+  "url": "https://github.com/rcorp/hooker/issues"
+},
+  "keywords": [
+  "hooks",
+  "javascript",
+  "hook oriented programming",
+  "pubsub",
+  "events",
+  "hooks in js"
+],
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "preferGlobal": false,
+  "private": false,  
+  "license": "Apache"
+}
+  

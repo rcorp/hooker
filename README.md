@@ -12,7 +12,7 @@ This module brings hooks to the world of Client Side & Server Side JavaScript.
 
 ###Node.js
 ```shell
-npm install hooker
+npm install hookerjs
 ```
 ###Browser
 ```html
