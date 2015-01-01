@@ -11,67 +11,76 @@ This module brings hooks to the world of Client Side & Server Side JavaScript.
 ##Installation
 
 ###Node.js
-`npm install hooker`
-
+```shell
+npm install hooker
+```
 ###Browser
-`<script src = "hooker.min.js"> </script>`
-
+```html
+<script src = "hooker.min.js"> </script>
+```
 ##Usage
 
 ###Basic Usage
 
-Use **hooker.register** like subscribe, sub, on, etc.  
-Use **hooker.trigger** like publish, pub, emit, etc.
+Use **hooker.register** like *subscribe, sub, on,* etc.  
+Use **hooker.trigger** like *publish, pub, emit,* etc.
 
-    hooker.register('hooked', function (data) {
-      console.log ('I am hooked to hooker', data);
-    });
-    
-    hooker.register('hooked', function (data) {
-      console.log ('I am also hooked to hooker', data);
-    });
+```js
+hooker.register('hooked', function (data) {
+  console.log ('I am hooked to hooker', data);
+});
 
-    hooker.trigger('hooked', {
-      message: 'hooking up!'
-    });
+hooker.register('hooked', function (data) {
+  console.log ('I am also hooked to hooker', data);
+});
+
+hooker.trigger('hooked', {
+  message: 'hooking up!'
+});
+
+//Outputs
+'I am hooked to hooker', {message: 'hooking up!'}
+'I am also hooked to hooker', {message: 'hooking up!'}
+```
 
 ###Data Passing
 Each hook has some data passed to it. It can change this data for the next hook. All hooks have access to all the original data. Eg:
 
-    hooker.register('hooker', function (data, previousData){
-    	console.log ('hooker1', data)
-        console.log ('prevData', previousData);
-        data.message = 'First!';
-        return data;
-    })
-    //Outputs
-    //'hooker1' {message: 'value'}
-    //'prevData' [{message: 'value'}]
-    
-    hooker.register('hooker', function (data, previousData){
-    	console.log ('hooker2', data);
-        console.log ('prevData', previousData);
-        data.message = 'Second!';
-        return data;
-    })
-    //Outputs
-    //'hooker2' {message: 'First!'}
-    //'prevData' [{message: 'value'}, {message: 'First!'}]
+```js
+hooker.register('hooker', function (data, previousData){
+  console.log ('hooker1', data)
+    console.log ('prevData', previousData);
+    data.message = 'First!';
+    return data;
+})
+//Outputs
+'hooker1' {message: 'value'}
+'prevData' [{message: 'value'}]
 
-    
-    hooker.register('hooker', function (data, previousData){
-    	console.log ('hooker3', data)
-        console.log ('prevData', previousData);
-    })
-    //Outputs
-    //'hooker3' {message: 'Second!'}
-    //'prevData' [{message: 'value'}, {message: 'First!'}, {message: 'Second!'}]
+hooker.register('hooker', function (data, previousData){
+  console.log ('hooker2', data);
+    console.log ('prevData', previousData);
+    data.message = 'Second!';
+    return data;
+})
+//Outputs
+'hooker2' {message: 'First!'}
+'prevData' [{message: 'value'}, {message: 'First!'}]
 
-    
-    hooker.trigger('hooker',{
-    	'message': 'value'
-    })
 
+hooker.register('hooker', function (data, previousData){
+  console.log ('hooker3', data)
+    console.log ('prevData', previousData);
+})
+//Outputs
+'hooker3' {message: 'Second!'}
+'prevData' [{message: 'value'}, {message: 'First!'}, {message: 'Second!'}]
+
+
+hooker.trigger('hooker',{
+  'message': 'value'
+})
+```
 ##API
 Coming Soon
 
@@ -87,13 +96,26 @@ There will be an API later on for complete control over sequencing of when each 
 We hope to include a compiler which will inline most of the static hooking calls for much greater performance. Dynamic Hooks are a much more complex problem to solve and will be tackled in the issues.
 
 ##Tests
-We will include more tests using The Intern testing framework. For nwo you can just use `test.js` 
+We will include more tests using [The Intern](http://theintern.io) testing framework. For now you can just use `test.js` 
+ 
+##Roadmap
+0.1 Initial documentation and setup.
+0.2 Basic synchronous hooks and simple API
+0.3 Asynchronous Research and integration.
+0.4 Integrate theintern and wide variety of testcases.
+0.5 Add performance tests and publish results.
+0.6 Better documentation and Wiki.
+
+1.0 Launch of first version for production.
+1.1 API to maintain order of hooks.
  
 ##Contributing
-Coming Soon. Till then, why don't you join the discussion?
+Coming Soon. Till then, why don't you [join the discussion](https://github.com/rcorp/hooker/issues)?
 
 ##Authors
 [Gaurav Ramanan](https://github.com/gaurav21r) 
 
 ##Copyright & License
 (c) 2014 [RCorp](http://www.rcorp.co.in). Code released under the [Apache License](https://github.com/rcorp/hooker/blob/master/LICENSE).
+ 
+
