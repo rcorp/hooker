@@ -4,6 +4,7 @@
 
 ##Hook Oriented Programming in JavaScript. Node.JS and the Browser
 
+<img align="right" height="260" src="https://cdn.rawgit.com/rcorp/hooker/master/hooker-logo.svg" />
 Hook based programming is very common. From web frameworks like [WordPress](http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters) & [Drupal](https://www.drupal.org/node/292) to Operating Systems like Windows! You can read more about it [here](http://en.wikipedia.org/wiki/Hooking) and [here](http://stackoverflow.com/questions/467557/what-is-meant-by-the-term-hook-in-programming). Hooks can be implemented under the [Publish Subcribe Architecture](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) or more generally under [Event Driven Architecture](http://en.wikipedia.org/wiki/Event-driven_architecture). Hooks allow for loosely coupled code and ***eXtreme*** productivity and highly parallel teams.
 
 This module brings hooks to the world of Client Side & Server Side JavaScript.
@@ -12,7 +13,7 @@ This module brings hooks to the world of Client Side & Server Side JavaScript.
 
 ###Node.js
 ```shell
-npm install hookerjs
+npm install hooker
 ```
 ###Browser
 ```html
@@ -27,7 +28,7 @@ Use **hooker.trigger** like *publish, pub, emit,* etc.
 
 ```js
 hooker.register('hooked', function (data) {
-	console.log ('I am hooked to hooker', data);
+  console.log ('I am hooked to hooker', data);
 });
 
 hooker.register('hooked', function (data) {
@@ -48,7 +49,7 @@ Each hook has some data passed to it. It can change this data for the next hook.
 
 ```js
 hooker.register('hooker', function (data, previousData){
-	console.log ('hooker1', data)
+  console.log ('hooker1', data)
     console.log ('prevData', previousData);
     data.message = 'First!';
     return data;
@@ -58,7 +59,7 @@ hooker.register('hooker', function (data, previousData){
 'prevData' [{message: 'value'}]
 
 hooker.register('hooker', function (data, previousData){
-	console.log ('hooker2', data);
+  console.log ('hooker2', data);
     console.log ('prevData', previousData);
     data.message = 'Second!';
     return data;
@@ -69,7 +70,7 @@ hooker.register('hooker', function (data, previousData){
 
 
 hooker.register('hooker', function (data, previousData){
-	console.log ('hooker3', data)
+  console.log ('hooker3', data)
     console.log ('prevData', previousData);
 })
 //Outputs
@@ -78,7 +79,7 @@ hooker.register('hooker', function (data, previousData){
 
 
 hooker.trigger('hooker',{
-	'message': 'value'
+  'message': 'value'
 })
 ```
 ##API
@@ -118,4 +119,3 @@ Coming Soon. Till then, why don't you [join the discussion](https://github.com/r
 ##Copyright & License
 (c) 2014 [RCorp](http://www.rcorp.co.in). Code released under the [Apache License](https://github.com/rcorp/hooker/blob/master/LICENSE).
  
-
