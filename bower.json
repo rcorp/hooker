@@ -3,8 +3,8 @@
   "version": "0.1.1",
   "homepage": "https://github.com/rcorp/hooker",
   "authors": [
-    "Gaurav Ramanan <gaurav@rcorp.co.in>",
-    "Ramanan Corporation <contactus@rcorp.co.in>"
+    "Ramanan Corporation (RCorp) <contactus@rcorp.co.in>",
+    "Gaurav Ramanan <gaurav@rcorp.co.in>"
   ],
   "description": "Hook Oriented Programming in JavaScript. Node.JS and the Browser",
   "main": "dist/hooker.min.js",

@@ -4,7 +4,7 @@
 
 ##Hook Oriented Programming in JavaScript. Node.JS and the Browser
 
-<img align="right" height="260" src="https://cdn.rawgit.com/rcorp/hooker/master/hooker-logo.svg" />
+<img align="right" height="260" src="https://cdn.rawgit.com/rcorp/hooker/master/assets/hooker-logo.svg" />
 Hook based programming is very common. From web frameworks like [WordPress](http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters) & [Drupal](https://www.drupal.org/node/292) to Operating Systems like Windows! You can read more about it [here](http://en.wikipedia.org/wiki/Hooking) and [here](http://stackoverflow.com/questions/467557/what-is-meant-by-the-term-hook-in-programming). Hooks can be implemented under the [Publish Subcribe Architecture](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) or more generally under [Event Driven Architecture](http://en.wikipedia.org/wiki/Event-driven_architecture). Hooks allow for loosely coupled code and ***eXtreme*** productivity and highly parallel teams.
 
 This module brings hooks to the world of Client Side & Server Side JavaScript.
