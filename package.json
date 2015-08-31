@@ -3,36 +3,38 @@
   "version": "0.1.1",
   "description": "Hook Oriented Programming in JavaScript. Node.JS and the Browser",
   "author": "Ramanan Corporation (RCorp) <contactus@rcorp.co.in>",
-  "contributors": [{
-  "name": "Gaurav Ramanan",
-  "email": "contactus@rcorp.co.in"
-}],
+  "contributors": [
+    {
+      "name": "Gaurav Ramanan",
+      "email": "contactus@rcorp.co.in"
+    }
+  ],
   "scripts": {
     "test": "vows --spec --isolate",
     "start": "node hooker.js"
   },
   "main": "hooker.js",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/rcorp/hooker/"
-},
-  "bugs": {
-  "url": "https://github.com/rcorp/hooker/issues"
-},
-  "keywords": [
-  "hooks",
-  "javascript",
-  "hook oriented programming",
-  "pubsub",
-  "events",
-  "hooks in js"
-],
-  "dependencies": {
+    "type": "git",
+    "url": "https://github.com/rcorp/hooker/"
   },
+  "bugs": {
+    "url": "https://github.com/rcorp/hooker/issues"
+  },
+  "keywords": [
+    "hooks",
+    "javascript",
+    "hook oriented programming",
+    "pubsub",
+    "events",
+    "hooks in js"
+  ],
+  "dependencies": {},
   "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "~0.9.1"
   },
   "preferGlobal": false,
-  "private": false,  
+  "private": false,
   "license": "Apache"
 }
-  
