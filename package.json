@@ -1,6 +1,6 @@
 {
   "name": "hookerjs",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Hook Oriented Programming in JavaScript. Node.JS and the Browser",
   "author": "Ramanan Corporation (RCorp) <contactus@rcorp.co.in>",
   "contributors": [
@@ -32,8 +32,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-shallow-deep-equal": "^1.3.0",
     "grunt": "~0.4.5",
-    "grunt-contrib-uglify": "~0.9.1"
+    "grunt-contrib-uglify": "~0.9.1",
+    "intern": "^3.0.0"
   },
   "preferGlobal": false,
   "private": false,
